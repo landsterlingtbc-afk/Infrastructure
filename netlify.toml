@@ -1,0 +1,21 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+  command = "npm install && node scripts/gen-env.js"
+
+[functions]
+  node_bundler = "esbuild"
+  # ملفات Excel المرفوعة تصل كـ base64 داخل جسم الطلب — نرفع الحد الافتراضي قليلاً
+  included_files = []
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

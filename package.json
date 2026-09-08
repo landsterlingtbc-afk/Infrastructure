@@ -1,0 +1,13 @@
+{
+  "name": "tbc-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "منصة TBC — نظام إدارة تشغيل وصيانة مرافق المدارس (نسخة إنتاجية)",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "xlsx": "^0.18.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
